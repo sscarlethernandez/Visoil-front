@@ -1,0 +1,49 @@
+
+<body class="cont">
+    
+	<img class="wave" src="/assets/img/wave.png">
+	<div class="container">
+		<div class="img">
+            <img class="icon" src="/assets/img/collage.png">
+		</div>
+		<div class="login-content">
+			<form >
+				<img src="/assets/img/avatar.svg">
+				<h2 class="title">Bienvenido</h2>
+				<div class="input-div one" [ngClass]="{'focus': usernameInputFocused}">
+					<div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Correo </h5>
+							  <input id="correo" type="text" class="input" id="username" [(ngModel)]="user" name="user" (focus)="onInputFocus()" (blur)="onInputBlur()">
+							</div>
+           		</div>
+                   <div class="input-div pass" [ngClass]="{'focus': passwordInputFocused}">
+					<div class="i"> 
+					  <i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+					  <h5>Contraseña</h5>
+					  <input
+						[type]="showPassword ? 'text' : 'password'"
+						class="input"
+						id="password"
+						[(ngModel)]="pass"
+						name="contraseña"
+						(focus)="onPasswordInputFocus()"
+						(blur)="onPasswordInputBlur()"
+					  >
+					  <div class="password-toggle" (click)="togglePasswordVisibility()">
+						<img class="ps" [src]="passwordToggleImageSrc">
+					</div>
+					</div>
+				  </div>				  
+            	<input type="button" class="btn" value="INICIAR SESION" id="btnLogin" (click)="iniciarSesion()">
+				<a href="#" class="olvido">¿Olvidaste tu contraseña?</a>
+
+            </form>
+        </div>
+    </div>
+
+</body>

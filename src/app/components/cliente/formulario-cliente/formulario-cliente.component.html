@@ -1,0 +1,176 @@
+<div class="container">
+  <h1 class="form-title">Registrar Cliente</h1>
+  <form #adminForm="ngForm" (submit)="registrarCliente(adminForm)">
+    <div class="main-user-info">
+      <div class="user-input-box">
+        <label for="tipoDocumento">Tipo de documento</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Escoja:</label
+            >
+          </div>
+          <select
+            id="tipoDocumento"
+            name="tipoDocumento"
+            [(ngModel)]="cliente.tipoDocumento"
+            required
+          >
+            <option selected>Opciones</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="PS">Pasaporte</option>
+            <option value="EX">Cédula de Extranjería</option>
+          </select>
+        </div>
+      </div>
+      <div class="user-input-box">
+        <label for="cedula">Cédula</label>
+        <input
+          type="text"
+          id="cedula"
+          name="cedula"
+          placeholder="Cédula"
+          [(ngModel)]="cliente.cedula"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="nombre">Nombres</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre"
+          required
+          [(ngModel)]="cliente.nombre"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="apellido">Apellidos</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Apellidos"
+          required
+          [(ngModel)]="cliente.apellido"
+        />
+      </div>
+      <div class="gender-details-box">
+        <span class="gender-title">Género</span>
+        <div class="gender-category">
+          <input
+            type="radio"
+            name="genero"
+            id="masculino"
+            value="Masculino"
+            [(ngModel)]="cliente.genero"
+          />
+          <label for="masculino">Masculino</label>
+          <input
+            type="radio"
+            name="genero"
+            id="femenino"
+            value="Femenino"
+            [(ngModel)]="cliente.genero"
+          />
+          <label for="femenino">Femenino</label>
+          <input
+            type="radio"
+            name="genero"
+            id="otro"
+            value="Otro"
+            [(ngModel)]="cliente.genero"
+          />
+          <label for="otro">Otro</label>
+          <input
+            type="radio"
+            name="genero"
+            id="noEspecificado"
+            value="No especificado"
+            [(ngModel)]="cliente.genero"
+          />
+          <label for="noEspecificado">No especificado</label>
+        </div>
+      </div>
+      <div class="user-input-box">
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          name="fechaNacimiento"
+          required
+          [(ngModel)]="cliente.fechaNacimiento"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="correoElectronico">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="Correo Electrónico"
+          required
+          [(ngModel)]="cliente.correo"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="contraseña">Contraseña</label>
+        <input
+          type="password"
+          id="pass"
+          name="pass"
+          placeholder="Contraseña"
+          required
+          [(ngModel)]="cliente.pass"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="numeroTelefono">Número de Teléfono</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Número de Teléfono"
+          [(ngModel)]="cliente.telefono"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="direccion">Dirección</label>
+        <input
+          type="text"
+          id="direccion"
+          name="direccion"
+          placeholder="Dirección"
+          [(ngModel)]="cliente.direccion"
+        />
+      </div>
+      <div class="user-input-box">
+        <div class="mb-3">
+          <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
+          <input
+            class="form-control"
+            type="file"
+            id="fotoPerfil"
+            name="fotoPerfil"
+            [(ngModel)]="cliente.fotoPerfil"
+          />
+        </div>
+      </div>
+      <div class="user-input-box">
+        <label for="ciudad">Ciudad</label>
+        <input
+          type="text"
+          id="ciudad"
+          name="ciudad"
+          placeholder="Ciudad"
+          [(ngModel)]="cliente.ciudad"
+        />
+      </div>
+    </div>
+    <div class="form-submit-btn">
+      <input type="submit" value="Registrar" />
+    </div>
+  </form>
+</div>
